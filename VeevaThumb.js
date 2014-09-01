@@ -28,6 +28,14 @@
 		}
 	};
 	
+	// History rollback function...
+	
+	function revertHistory(){
+		var latestHistory = app.activeDocument.historyStates.length;
+		var revertTo = latestHistory - 2;
+		app.activeDocument.activeHistoryState = app.activeDocument.historyStates[revertTo];
+	};
+	
 	// The export function...
 	
 	function exportThumbs(){
@@ -35,13 +43,14 @@
 			app.activeDocument = openDocs[i];
 			if (newSize == "1"){
 				app.activeDocument.resizeImage(1024,768); // Typical thumbnail size for "Home" screens
-			} else {
+			} else if (newSize == "2"){
 				app.activeDocument.resizeImage(200,150); // Default thumbnail size for Veeva presentations
 			}
 			var fullPath = app.activeDocument.path.fsName;
 			var Name = app.activeDocument.name.replace(/\.[^\.]+$/,"");
 			var saveFile = File(fullPath + "/" + Name + ".jpg");
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
+			revertHistory();
 		};
 	};
 	
@@ -52,5 +61,3 @@
 	// Viva la Veeva!
 	
 	exportThumbs();
-	
-	
