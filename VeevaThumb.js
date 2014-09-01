@@ -38,9 +38,9 @@
 			} else {
 				app.activeDocument.resizeImage(200,150); // Default thumbnail size for Veeva presentations
 			}
+			var fullPath = app.activeDocument.path.fsName;
 			var Name = app.activeDocument.name.replace(/\.[^\.]+$/,"");
-			var fullpath = app.activeDocument.path.fsName;
-			var saveFile = File(fullpath + "/" + Name + ".jpg");
+			var saveFile = File(fullPath + "/" + Name + ".jpg");
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
 		};
 	};
