@@ -8,7 +8,7 @@
 	
 	// Collect open documents and prepare to export as JPG...
 	
-	var newSize = "";
+	var newSize = undefined;
 	var openDocs = app.documents;
 	var exportJPG = new ExportOptionsSaveForWeb();
 		exportJPG.format = SaveDocumentType.JPEG; 
@@ -21,7 +21,7 @@
 	
 	function askUser(){
 		while ((newSize !== "1") || (newSize !== "2")){
-			newSize = (prompt("Export: 1) 1024x768, or 2) 200x150? [type either '1' or '2']"));
+			newSize = (prompt("Export: 1) 1024x768, or 2) 200x150? [type either '1' or '2']",""));
 			if (newSize == "1" || newSize == "2"){
 				return newSize;
 			}
@@ -39,7 +39,8 @@
 	// The export function...
 	
 	function exportThumbs(){
-		for (var i = 0; i < openDocs.length; i++){
+		askUser(); // Obtain user input
+		for (var i = 0; i < openDocs.length; i++){ // Cycle through the documents
 			app.activeDocument = openDocs[i];
 			if (newSize == "1"){
 				app.activeDocument.resizeImage(1024,768); // Typical thumbnail size for "Home" screens
@@ -50,13 +51,9 @@
 			var Name = app.activeDocument.name.replace(/\.[^\.]+$/,"");
 			var saveFile = File(fullPath + "/" + Name + ".jpg");
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
-			revertHistory();
+			revertHistory(); // Undo the image resize after exporting
 		};
 	};
-	
-	// Obtain user input...
-	
-	askUser();
 	
 	// Viva la Veeva!
 	
