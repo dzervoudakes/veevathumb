@@ -1,4 +1,5 @@
-/* VeevaThumb
+/**
+ * VeevaThumb
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
