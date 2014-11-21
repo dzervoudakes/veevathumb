@@ -1,5 +1,5 @@
 /**
- * VeevaThumb
+ * VeevaThumb: https://github.com/DanZiti/VeevaThumb
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
@@ -35,6 +35,7 @@
 		var latestHistory = app.activeDocument.historyStates.length;
 		var revertTo = latestHistory - 2;
 		app.activeDocument.activeHistoryState = app.activeDocument.historyStates[revertTo];
+		app.activeDocument.save();
 	};
 	
 	// The export function...
