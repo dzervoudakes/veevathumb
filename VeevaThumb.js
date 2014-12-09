@@ -54,7 +54,7 @@
 			var saveFile = File(fullPath + "/" + Name + ".jpg");
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
 			revertHistory(); // Undo the image resize after exporting
-		};
+		}
 	};
 	
 	// Viva la Veeva!
