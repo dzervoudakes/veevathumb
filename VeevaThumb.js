@@ -22,7 +22,7 @@
 	
 	function askUser(){
 		while ((newSize !== "1") || (newSize !== "2")){
-			newSize = (prompt("Export: 1) 1024x768, or 2) 200x150?",""));
+			newSize = prompt("Export: 1) 1024x768, or 2) 200x150?","");
 			if (newSize == "1" || newSize == "2"){
 				return newSize;
 			}
