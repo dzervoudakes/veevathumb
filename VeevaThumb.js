@@ -12,7 +12,7 @@
 	var newSize = undefined;
 	var openDocs = app.documents;
 	var exportJPG = new ExportOptionsSaveForWeb();
-		exportJPG.format = SaveDocumentType.JPEG; 
+		exportJPG.format = SaveDocumentType.JPEG;
 		exportJPG.includeProfile = false;
 		exportJPG.interlaced = true;
 		exportJPG.optimized = false;
