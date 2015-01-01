@@ -3,7 +3,7 @@
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
- * Copyright (c) 2014 Dan Zervoudakes
+ * Copyright (c) 2014, 2015 Dan Zervoudakes
  * Developed under the MIT license
  */
 	
