@@ -4,7 +4,7 @@
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
  * Copyright (c) 2014, 2015 Dan Zervoudakes
- * Developed under the MIT license
+ * Released under the MIT license
  */
 	
 	// Collect open documents and prepare to export as JPG...
