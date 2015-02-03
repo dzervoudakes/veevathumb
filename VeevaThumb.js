@@ -8,7 +8,7 @@
  */
 	
 	// Collect open documents and prepare to export as JPG...
-	
+	//
 	var newSize = undefined;
 	var openDocs = app.documents;
 	var exportJPG = new ExportOptionsSaveForWeb();
@@ -19,7 +19,7 @@
 		exportJPG.quality = 100;
 	
 	// Ask users which size they wish to export...
-	
+	//
 	function askUser(){
 		while ((newSize !== "1") || (newSize !== "2")){
 			newSize = prompt("Export: 1) 1024x768, or 2) 200x150?","");
@@ -30,7 +30,7 @@
 	};
 	
 	// History rollback function...
-	
+	//
 	function revertHistory(){
 		var latestHistory = app.activeDocument.historyStates.length;
 		var revertTo = latestHistory - 2;
@@ -39,7 +39,7 @@
 	};
 	
 	// The export function...
-	
+	//
 	function exportThumbs(){
 		askUser(); // Obtain user input
 		for (var i = 0; i < openDocs.length; i++){ // Cycle through the documents
@@ -58,5 +58,5 @@
 	};
 	
 	// Viva la Veeva!
-	
+	//
 	exportThumbs();
