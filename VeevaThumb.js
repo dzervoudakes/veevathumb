@@ -1,10 +1,12 @@
 /**
- * VeevaThumb: https://github.com/DanZiti/VeevaThumb
+ * VeevaThumb
+ * https://github.com/DanZiti/VeevaThumb
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
  * Copyright (c) 2014, 2015 Dan Zervoudakes
  * Released under the MIT license
+ * https://github.com/DanZiti/VeevaThumb/blob/master/LICENSE
  */
 	
 	// Collect open documents and prepare to export as JPG...
