@@ -57,7 +57,9 @@
 			
 			if (newSize == "1") {
 				app.activeDocument.resizeImage(1024, 768); // Typical thumbnail size for "Home" screens
-			} else if (newSize == "2") {
+			}
+			
+			else if (newSize == "2") {
 				app.activeDocument.resizeImage(200, 150); // Default thumbnail size for Veeva presentations
 			}
 			
