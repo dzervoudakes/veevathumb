@@ -56,11 +56,11 @@
 			app.activeDocument = openDocs[i];
 			
 			if (newSize === "1") {
-				app.activeDocument.resizeImage(1024, 768); // Typical thumbnail size for "Home" screens
+				app.activeDocument.resizeImage(UnitValue(1024, "px"), UnitValue(768, "px")); // Typical thumbnail size for "Home" screens
 			}
 			
 			else if (newSize === "2") {
-				app.activeDocument.resizeImage(200, 150); // Default thumbnail size for Veeva presentations
+				app.activeDocument.resizeImage(UnitValue(200, "px"), UnitValue(150, "px")); // Default thumbnail size for Veeva presentations
 			}
 			
 			var fullPath = app.activeDocument.path.fsName;
