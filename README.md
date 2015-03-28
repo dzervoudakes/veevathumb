@@ -1,9 +1,8 @@
-VeevaThumb
-==========
+#VeevaThumb
 
-For use with Adobe Photoshop CS6 or CC. Leverages Photoshop JavaScript API.
+_Viva la Veeva!_
 
-Exports thumbnails for "Veeva" eDetailing presentations.
+Exports thumbnails for "Veeva" eDetailing presentations via Photoshop JavaScript API. For use within Photoshop CS6 or CC.
 
 #####Instructions
 
