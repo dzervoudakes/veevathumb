@@ -4,7 +4,7 @@
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
- * Copyright (c) 2014, 2015 Dan Zervoudakes
+ * Copyright (c) 2014, 2016 Dan Zervoudakes
  * Released under the MIT license
  * https://github.com/DanZiti/VeevaThumb/blob/master/LICENSE
  */
@@ -25,14 +25,9 @@
 	// Ask users which size they wish to export...
 	//
 	function askUser() {
-		
 		while (newSize !== "1" || newSize !== "2") {
-			
 			newSize = prompt("Export: 1) 1024x768, or 2) 200x150?", "");
-			
-			if (newSize === "1" || newSize === "2") {
-				return newSize;
-			}
+			if (newSize === "1" || newSize === "2") return newSize;
 		}
 	};
 	
