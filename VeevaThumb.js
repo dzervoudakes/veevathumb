@@ -8,6 +8,8 @@
  * Released under the MIT license
  * https://github.com/DanZiti/VeevaThumb/blob/master/LICENSE
  */
+ 
+ (function() {
 	
 	// Collect open documents and prepare to export as JPG...
 	//
@@ -57,9 +59,7 @@
 			
 			if (newSize === "1") {
 				app.activeDocument.resizeImage(UnitValue(1024, "px"), UnitValue(768, "px")); // Typical thumbnail size for "Home" screens
-			}
-			
-			else if (newSize === "2") {
+			} else if (newSize === "2") {
 				app.activeDocument.resizeImage(UnitValue(200, "px"), UnitValue(150, "px")); // Default thumbnail size for Veeva presentations
 			}
 			
@@ -75,3 +75,5 @@
 	// Viva la Veeva!
 	//
 	exportThumbs();
+	
+})();
