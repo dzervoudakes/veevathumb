@@ -23,9 +23,9 @@
 	
 	// Ask users which size they wish to export...
 	function askUser() {
-		while (newSize !== "1" || newSize !== "2") {
-			newSize = prompt("Export: 1) 1024x768, or 2) 200x150?", "");
-			if (newSize === "1" || newSize === "2") return newSize;
+		while (newSize !== '1' || newSize !== '2') {
+			newSize = prompt('Export: 1) 1024x768, or 2) 200x150?', '');
+			if (newSize === '1' || newSize === '2') return newSize;
 		}
 	};
 	
@@ -48,18 +48,19 @@
 			
 			app.activeDocument = openDocs[i];
 			
-			if (newSize === "1") {
-				app.activeDocument.resizeImage(UnitValue(1024, "px"), UnitValue(768, "px")); // Typical thumbnail size for "Home" screens
-			} else if (newSize === "2") {
-				app.activeDocument.resizeImage(UnitValue(200, "px"), UnitValue(150, "px")); // Default thumbnail size for Veeva presentations
+			if (newSize === '1') {
+				app.activeDocument.resizeImage(UnitValue(1024, 'px'), UnitValue(768, 'px')); // Typical thumbnail size for "Home" screens
+			} else if (newSize === '2') {
+				app.activeDocument.resizeImage(UnitValue(200, 'px'), UnitValue(150, 'px')); // Default thumbnail size for Veeva presentations
 			}
 			
 			var fullPath = app.activeDocument.path.fsName;
-			var Name = app.activeDocument.name.replace(/\.[^\.]+$/, "");
-			var saveFile = File(fullPath + "/" + Name + ".jpg");
+			var Name = app.activeDocument.name.replace(/\.[^\.]+$/, '');
+			var saveFile = File(fullPath + '/' + Name + '.jpg');
 			
+			// Export the files and undo image resizing after successfully exporting
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
-			revertHistory(); // Undo the image resize after exporting
+			revertHistory();
 		}
 	};
 	
