@@ -31,33 +31,27 @@
 	
 	// History rollback function...
 	function revertHistory() {
-		
 		var latestHistory = app.activeDocument.historyStates.length;
 		var revertTo = latestHistory - 2;
-		
 		app.activeDocument.activeHistoryState = app.activeDocument.historyStates[revertTo];
 		app.activeDocument.save();
 	};
 	
 	// The export function...
 	function exportThumbs() {
-		
-		askUser(); // Obtain user input
-		
-		for (var i = 0; i < openDocs.length; i++) { // Cycle through the documents
-			
+		// Obtain user input
+		askUser();
+		// Cycle through the documents
+		for (var i = 0; i < openDocs.length; i++) {
 			app.activeDocument = openDocs[i];
-			
 			if (newSize === '1') {
 				app.activeDocument.resizeImage(UnitValue(1024, 'px'), UnitValue(768, 'px')); // Typical thumbnail size for "Home" screens
 			} else if (newSize === '2') {
 				app.activeDocument.resizeImage(UnitValue(200, 'px'), UnitValue(150, 'px')); // Default thumbnail size for Veeva presentations
 			}
-			
 			var fullPath = app.activeDocument.path.fsName;
 			var Name = app.activeDocument.name.replace(/\.[^\.]+$/, '');
 			var saveFile = File(fullPath + '/' + Name + '.jpg');
-			
 			// Export the files and undo image resizing after successfully exporting
 			app.activeDocument.exportDocument(saveFile, ExportType.SAVEFORWEB, exportJPG);
 			revertHistory();
