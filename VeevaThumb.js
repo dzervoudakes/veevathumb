@@ -1,12 +1,12 @@
 /**
  * VeevaThumb
- * https://github.com/dzervoudakes/VeevaThumb
+ * https://github.com/dzervoudakes/veevathumb
  * 
  * Auto-exports thumbnails for "Veeva" eDetailing presentations
  * 
  * Copyright (c) 2014, 2016 Dan Zervoudakes
  * Released under the MIT license
- * https://github.com/dzervoudakes/VeevaThumb/blob/master/LICENSE
+ * https://github.com/dzervoudakes/veevathumb/blob/master/LICENSE
  */
  
  (function() {
